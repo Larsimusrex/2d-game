@@ -1,4 +1,5 @@
 extends Area2D
 
 func _on_Goal_body_entered(body):
-	pass #win game
+	get_tree().change_scene('res://Menus/Menu.tscn')
+ #win game
