@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Tilemap/tiles_packed.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Textures/tile_0131.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Textures/tile_0111.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Textures/tile_0112.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Objects/Goal.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Objects/Killbox.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
@@ -107,23 +106,6 @@ points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 4/shapes = [  ]
 4/z_index = 0
 
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": true,
-"name": "Flag",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 3, 17.5 )
-
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 6, 6 )
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 337, 13 )
-
 [node name="ChunkEnd" type="Node2D"]
 
 [node name="TileMapEnd" type="TileMap" parent="."]
@@ -132,33 +114,11 @@ cell_size = Vector2( 18, 18 )
 format = 1
 tile_data = PoolIntArray( 131098, 0, 0, 131099, 2, 0, 196631, 0, 0, 196632, 2, 0, 262163, 0, 0, 262164, 1, 0, 262165, 2, 0, 327696, 0, 0, 327697, 2, 0, 393217, 0, 0, 393218, 1, 0, 393219, 1, 0, 393220, 2, 0, 393223, 0, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 2, 0, 720924, 0, 0, 720925, 1, 0, 720926, 1, 0, 720927, 1, 0, 720928, 2, 0 )
 
-[node name="Goal" type="Area2D" parent="TileMapEnd"]
-position = Vector2( 584, 197 )
+[node name="Killbox" parent="." instance=ExtResource( 5 )]
+position = Vector2( 300, 239 )
 
-[node name="Flag" type="AnimatedSprite" parent="TileMapEnd/Goal"]
-position = Vector2( 8, -23 )
-frames = SubResource( 5 )
-animation = "Flag"
-frame = 1
-speed_scale = 0.7
-playing = true
+[node name="Killbox2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 900, 239 )
 
-[node name="FlagPole" type="Sprite" parent="TileMapEnd/Goal"]
-position = Vector2( 8, -7 )
-texture = ExtResource( 2 )
-
-[node name="ColissionPole" type="CollisionShape2D" parent="TileMapEnd/Goal"]
-visible = false
-position = Vector2( 2, -15.5 )
-shape = SubResource( 6 )
-
-[node name="CollisionFlag" type="CollisionShape2D" parent="TileMapEnd/Goal"]
-visible = false
-position = Vector2( 11, -24 )
-shape = SubResource( 7 )
-
-[node name="KillBox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
-position = Vector2( 292, 232 )
-shape = SubResource( 8 )
+[node name="Goal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 586, 200 )

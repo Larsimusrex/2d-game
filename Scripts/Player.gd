@@ -8,7 +8,8 @@ export var accerleration: float
 export var jump_force: float
 
 #internal variables
-var velocity = Vector2.ZERO
+var velocity: Vector2 = Vector2.ZERO
+var load_next: float = 18 * 34
 
 func _physics_process(delta):
 	if Input.is_action_pressed('left'):
@@ -32,3 +33,9 @@ func _physics_process(delta):
 	
 	velocity.y += gravity*delta
 	velocity = move_and_slide(velocity, Vector2.UP)
+
+func _process(_delta):
+	if position.x > load_next:
+		print("new chunk")
+		get_tree().root.get_node("Game").load_chunk()
+		load_next += 34 * 18

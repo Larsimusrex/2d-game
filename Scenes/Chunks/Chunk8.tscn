@@ -1,6 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Tilemap/tiles_packed.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Objects/Killbox.tscn" type="PackedScene" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
@@ -104,9 +105,6 @@ points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 4/shapes = [  ]
 4/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 337, 13 )
-
 [node name="Chunk8" type="Node2D"]
 
 [node name="TileMap8" type="TileMap" parent="."]
@@ -115,8 +113,5 @@ cell_size = Vector2( 18, 18 )
 format = 1
 tile_data = PoolIntArray( 262170, 0, 0, 262171, 2, 0, 327702, 0, 0, 327703, 2, 0, 393217, 0, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 2, 0, 393234, 0, 0, 393235, 2, 0, 393246, 0, 0, 393247, 1, 0, 393248, 2, 0, 458766, 0, 0, 458767, 2, 0, 524299, 0, 0, 524300, 2, 0, 589832, 0, 0, 589833, 2, 0 )
 
-[node name="KillBox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
-position = Vector2( 296, 192 )
-shape = SubResource( 5 )
+[node name="Killbox" parent="." instance=ExtResource( 2 )]
+position = Vector2( 301, 194 )
