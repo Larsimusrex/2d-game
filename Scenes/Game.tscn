@@ -25,13 +25,13 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 7, 10.5 )
 
-[sub_resource type="ConvexPolygonShape2D" id=1]
+[sub_resource type="ConvexPolygonShape2D" id=11]
 points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 
-[sub_resource type="ConvexPolygonShape2D" id=2]
+[sub_resource type="ConvexPolygonShape2D" id=12]
 points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=13]
 points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 
 [sub_resource type="TileSet" id=4]
@@ -45,14 +45,14 @@ points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
+0/shape = SubResource( 11 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 1 ),
+"shape": SubResource( 11 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -66,14 +66,14 @@ points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 1/navigation_offset = Vector2( 0, 0 )
 1/shape_offset = Vector2( 0, 0 )
 1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape = SubResource( 2 )
+1/shape = SubResource( 12 )
 1/shape_one_way = false
 1/shape_one_way_margin = 1.0
 1/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 2 ),
+"shape": SubResource( 12 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 0
@@ -87,14 +87,14 @@ points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 2/navigation_offset = Vector2( 0, 0 )
 2/shape_offset = Vector2( 0, 0 )
 2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape = SubResource( 3 )
+2/shape = SubResource( 13 )
 2/shape_one_way = false
 2/shape_one_way_margin = 1.0
 2/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 3 ),
+"shape": SubResource( 13 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 2/z_index = 0
@@ -127,9 +127,6 @@ points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 4/shapes = [  ]
 4/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 17.2877, 0.64473 )
-
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
@@ -143,6 +140,9 @@ extents = Vector2( 3, 17.5 )
 
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 6, 6 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 20.1527, 0.64473 )
 
 [node name="Game" type="Node2D"]
 position = Vector2( 0, -1 )
@@ -171,23 +171,16 @@ current = true
 smoothing_enabled = true
 smoothing_speed = 2.0
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Test" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
 cell_size = Vector2( 18, 18 )
 format = 1
 tile_data = PoolIntArray( 393217, 0, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 2, 0, 393224, 0, 0, 393225, 2, 0, 393229, 0, 0, 393230, 1, 0, 393231, 1, 0, 393232, 1, 0, 393233, 1, 0, 393234, 2, 0 )
 
-[node name="KillBox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillBox"]
-position = Vector2( 298, 141 )
-scale = Vector2( 18.3337, 11.0051 )
-shape = SubResource( 7 )
-
-[node name="Goal" type="Area2D" parent="."]
+[node name="Goal" type="Area2D" parent="Test"]
 position = Vector2( 335, 108 )
 
-[node name="Flag" type="AnimatedSprite" parent="Goal"]
+[node name="Flag" type="AnimatedSprite" parent="Test/Goal"]
 position = Vector2( 8, -23 )
 frames = SubResource( 8 )
 animation = "Flag"
@@ -195,19 +188,26 @@ frame = 1
 speed_scale = 0.7
 playing = true
 
-[node name="FlagPole" type="Sprite" parent="Goal"]
+[node name="FlagPole" type="Sprite" parent="Test/Goal"]
 position = Vector2( 8, -7 )
 texture = ExtResource( 6 )
 
-[node name="ColissionPole" type="CollisionShape2D" parent="Goal"]
+[node name="ColissionPole" type="CollisionShape2D" parent="Test/Goal"]
 visible = false
 position = Vector2( 2, -15.5 )
 shape = SubResource( 9 )
 
-[node name="CollisionFlag" type="CollisionShape2D" parent="Goal"]
+[node name="CollisionFlag" type="CollisionShape2D" parent="Test/Goal"]
 visible = false
 position = Vector2( 11, -24 )
 shape = SubResource( 10 )
 
-[connection signal="body_entered" from="KillBox" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Goal" to="." method="_on_Goal_body_entered"]
+[node name="KillBox" type="Area2D" parent="Test"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Test/KillBox"]
+position = Vector2( 248.474, 150 )
+scale = Vector2( 18.3337, 11.0051 )
+shape = SubResource( 7 )
+
+[connection signal="body_entered" from="Test/Goal" to="." method="_on_Goal_body_entered"]
+[connection signal="body_entered" from="Test/KillBox" to="." method="_on_Area2D_body_entered"]
