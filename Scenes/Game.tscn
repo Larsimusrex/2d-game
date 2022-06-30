@@ -107,7 +107,8 @@ script = ExtResource( 5 )
 position = Vector2( 138, 100 )
 script = ExtResource( 4 )
 gravity = 150.0
-speed = 50.0
+max_speed = 70.0
+accerleration = 300.0
 jump_force = -100.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
@@ -120,11 +121,10 @@ position = Vector2( 11, -33.5 )
 shape = SubResource( 6 )
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2( 82, 142 )
 tile_set = SubResource( 4 )
 cell_size = Vector2( 18, 18 )
 format = 1
-tile_data = PoolIntArray( -131071, 0, 0, -131070, 1, 0, -131069, 1, 0, -131068, 1, 0, -131067, 2, 0, -131064, 0, 0, -131063, 1, 0, -131062, 1, 0, -131061, 1, 0, -131060, 2, 0 )
+tile_data = PoolIntArray( 393217, 0, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 2, 0, 393224, 0, 0, 393225, 2, 0, 393229, 0, 0, 393230, 1, 0, 393231, 1, 0, 393232, 1, 0, 393233, 1, 0, 393234, 2, 0 )
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -3,7 +3,8 @@ extends KinematicBody2D
 
 #parameters
 export var gravity: float
-export var speed: float
+export var max_speed: float
+export var accerleration: float
 export var jump_force: float
 
 #internal variables
@@ -11,12 +12,14 @@ var velocity = Vector2.ZERO
 
 func _physics_process(delta):
 	if Input.is_action_pressed('left'):
-		velocity.x = -speed
+		if velocity.x > -max_speed:
+			velocity.x -= accerleration * delta
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("Walk")
 		
 	elif Input.is_action_pressed("right"):
-		velocity.x = speed
+		if velocity.x < max_speed:
+			velocity.x += accerleration * delta
 		$AnimatedSprite.flip_h = false
 		$AnimatedSprite.play("Walk")
 		
