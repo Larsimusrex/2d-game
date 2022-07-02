@@ -41,7 +41,6 @@ position = Vector2( 0, -1 )
 script = ExtResource( 5 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 33, 101 )
 script = ExtResource( 4 )
 gravity = 180.0
 max_speed = 70.0

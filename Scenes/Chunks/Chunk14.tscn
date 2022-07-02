@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Tilemap/tiles_packed.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Objects/Killbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Chunk.gd" type="Script" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
@@ -106,12 +107,15 @@ points = PoolVector2Array( 0, 0, 18, 0, 18, 18, 0, 18 )
 4/z_index = 0
 
 [node name="Chunk14" type="Node2D"]
+script = ExtResource( 3 )
+start_height = 1
+end_height = 1
 
 [node name="TileMap14" type="TileMap" parent="."]
 tile_set = SubResource( 4 )
 cell_size = Vector2( 18, 18 )
 format = 1
-tile_data = PoolIntArray( 327689, 0, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 2, 0, 393217, 0, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 2, 0, 393247, 0, 0, 393248, 2, 0, 458769, 0, 0, 458770, 1, 0, 458771, 1, 0, 458772, 1, 0, 458773, 1, 0, 458774, 1, 0, 458775, 2, 0, 458778, 0, 0, 458779, 1, 0, 458780, 1, 0, 458781, 2, 0 )
+tile_data = PoolIntArray( 8, 0, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 2, 0, 65536, 0, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 2, 0, 65566, 0, 0, 65567, 2, 0, 131088, 0, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 2, 0, 131097, 0, 0, 131098, 1, 0, 131099, 1, 0, 131100, 2, 0 )
 
 [node name="Killbox" parent="." instance=ExtResource( 2 )]
-position = Vector2( 300, 161 )
+position = Vector2( 300, 73 )
