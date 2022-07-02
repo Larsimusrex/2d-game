@@ -36,6 +36,5 @@ func _physics_process(delta):
 
 func _process(_delta):
 	if position.x > load_next:
-		print("new chunk")
 		get_tree().root.get_node("Game").load_chunk()
 		load_next += 34 * 18
