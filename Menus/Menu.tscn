@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/110-1108877_start-button-start-button-png.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Textures/3fe99aa44571a2c (1).png" type="Texture" id=3]
-[ext_resource path="res://Assets/Textures/3c25a81e0e45cb6.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Textures/Buttons/110-1108877_start-button-start-button-png.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/Buttons/3fe99aa44571a2c (1).png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/Buttons/3c25a81e0e45cb6.png" type="Texture" id=4]
 
 [node name="Menu" type="Control"]
 margin_right = 600.0
