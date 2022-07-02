@@ -1,19 +1,16 @@
 extends Node
 
-
-
-func _on_StartButton_pressed():
+func _on_TouchScreenButton_pressed():
 	get_tree().change_scene('res://Scenes/Game.tscn')
 
 
-func _on_OptionsButton_pressed():
+func _on_optionsbtn_pressed():
 	get_tree().change_scene('res://Menus/OptionsMenu.tscn')
 
 
-func _on_QuitButton_pressed():
+func _on_quitbtn_pressed():
 	get_tree().quit()
 
 
-func _on_Back_pressed():
+func _on_exitbtn_pressed():
 	get_tree().change_scene('res://Menus/Menu.tscn')
-	
