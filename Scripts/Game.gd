@@ -24,7 +24,7 @@ func load_chunk():
 		if amount_chunks == current_amount:
 			chunk = end.instance()
 		else:
-			chunk = chunks[randi() % 12 + 1].instance()
+			chunk = chunks[randi() % 13].instance()
 		add_child(chunk)
 		#current_height += chunk.start_height
 		#print(current_height, chunk.start_height)
@@ -33,6 +33,5 @@ func load_chunk():
 		last_chunks.push_front(chunk)
 		if last_chunks.size() > loaded_chunks:
 			remove_child(last_chunks.pop_back())
-			print(last_chunks.size())
 		current_amount += 1
 
