@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Textures/110-1108877_start-button-start-button-png.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Textures/3fe99aa44571a2c (1).png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/3fe99aa44571a2c (1).png" type="Texture" id=2]
+[ext_resource path="res://Assets/Textures/110-1108877_start-button-start-button-png.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Textures/3c25a81e0e45cb6.png" type="Texture" id=4]
 
 [node name="Menu" type="Control"]
@@ -13,7 +13,7 @@ script = ExtResource( 1 )
 [node name="startbtn" type="TouchScreenButton" parent="."]
 position = Vector2( 260, 93 )
 scale = Vector2( 0.130106, 0.118774 )
-normal = ExtResource( 2 )
+normal = ExtResource( 3 )
 
 [node name="optionsbtn" type="TouchScreenButton" parent="."]
 position = Vector2( 260, 124 )
@@ -23,7 +23,7 @@ normal = ExtResource( 4 )
 [node name="quitbtn" type="TouchScreenButton" parent="."]
 position = Vector2( 260, 155 )
 scale = Vector2( 0.260606, 0.221429 )
-normal = ExtResource( 3 )
+normal = ExtResource( 2 )
 
 [connection signal="pressed" from="startbtn" to="." method="_on_startbtn_pressed"]
 [connection signal="pressed" from="optionsbtn" to="." method="_on_optionsbtn_pressed"]
