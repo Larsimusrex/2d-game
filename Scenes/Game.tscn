@@ -47,6 +47,7 @@ extents = Vector2( 7, 10.5 )
 
 [sub_resource type="AnimatedTexture" id=7]
 frames = 7
+fps = 8.0
 frame_0/texture = ExtResource( 22 )
 frame_1/texture = ExtResource( 23 )
 frame_1/delay_sec = 0.0
@@ -63,6 +64,7 @@ frame_6/delay_sec = 0.0
 
 [sub_resource type="AnimatedTexture" id=8]
 frames = 7
+fps = 8.0
 frame_0/texture = ExtResource( 21 )
 frame_1/texture = ExtResource( 6 )
 frame_1/delay_sec = 0.0
@@ -79,6 +81,7 @@ frame_6/delay_sec = 0.0
 
 [sub_resource type="AnimatedTexture" id=9]
 frames = 7
+fps = 8.0
 frame_0/texture = ExtResource( 7 )
 frame_1/texture = ExtResource( 19 )
 frame_1/delay_sec = 0.0
@@ -98,6 +101,7 @@ position = Vector2( 0, -1 )
 script = ExtResource( 5 )
 
 [node name="Player" type="KinematicBody2D" parent="."]
+z_index = 100
 script = ExtResource( 4 )
 gravity = 180.0
 max_speed = 70.0

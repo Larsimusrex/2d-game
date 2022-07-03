@@ -21,7 +21,7 @@ func load_chunk():
 		if amount_chunks == current_amount:
 			chunk = end.instance()
 		else:
-			chunk = chunks[randi() % 12 + 1].instance()
+			chunk = chunks[1].instance()
 		add_child(chunk)
 		chunk.set_position(Vector2(34 * 18 * current_amount, 10))
 		current_amount += 1

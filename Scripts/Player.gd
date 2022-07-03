@@ -21,7 +21,7 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("right"):
 		if velocity.x < max_speed:
 			velocity.x += accerleration * delta
-		$AnimatedSprite.flip_h = false
+		$AnimatedSprite.flip_h = true
 		$AnimatedSprite.play("Walk")
 		
 	else:
